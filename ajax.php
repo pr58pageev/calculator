@@ -56,10 +56,11 @@ $arRequest = getPostNormal($_POST);
 
 //Получим данные, по которым будем считать, в зависимости от цены
 foreach ($arBaseData['PRICE_ARRAY'] as $arBaseDatum) {
-    if($arRequest['price']>=$arBaseData['MIN_PRICE'] && $arRequest['price']<=$arBaseDatum['MAX_PRICE']){
+    if($arRequest['price']>=$arBaseDatum['MIN_PRICE'] && $arRequest['price']<=$arBaseDatum['MAX_PRICE']){
         $tempSetting = $arBaseDatum;
     }
 }
+
 //Массив, который вернем в JSON
 $arResult = array();
 
